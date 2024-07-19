@@ -69,22 +69,13 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex justify-center px-8 md:px-8 h-full max-h-full">
-        <div className="flex flex-col items-center m-auto">
-          <div className="order-2 md:order-1 relative flex my-8  items-center bg-white justify-between shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
-            {/* <div className='absolute w-full z-10 flex justify-center'>
-              <Image
-                className="hidden hidden-image w-[55px] md:w-[85px]" // Apply hidden class initially
-                src="/img/svg/letter.svg"
-                alt="Next.js Logo"
-                width={0}
-                height={0}
-                priority
-              />
-            </div> */}
+      <main className="flex flex-col justify-between px-6 md:px-8 h-full  max-h-full mt-16 lg:mt-16 xl:mt-32">
+        <div className="flex flex-col items-center mx-auto">
+          <div className="order-2 md:order-1 relative flex my-8 lg:my-0  items-center bg-white justify-between shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
+
             <div className='space-container flex w-full space-x-0'>
-              <div className="relative w-7 md:w-8 h-[120px] md:h-52 bg-[#202042] rounded-l-md">
-                <div className="w-[18px] h-[100px] md:h-44 bg-white my-auto absolute inset-y-0 right-0"></div>
+              <div className="relative w-5 md:w-6 h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-l-md">
+                <div className="w-[10px] md:w-3 h-[100px] md:h-24 lg:h-24 xl:h-44 bg-white my-auto absolute inset-y-0 right-0"></div>
               </div>
               <div className='bg-white h-full flex m-auto'>
                 <Image
@@ -96,15 +87,15 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative w-7 md:w-8 h-[120px] md:h-52 bg-[#202042] rounded-r-md flex">
-                <div className="w-[18px] h-[100px] md:h-44 bg-white my-auto absolute inset-y-0 left-0"></div>
+              <div className="relative w-5 md:w-6 h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-r-md flex">
+                <div className="w-[10px] md:w-3 h-[100px] md:h-24 lg:h-24 xl:h-44 bg-white my-auto absolute inset-y-0 left-0"></div>
               </div>
             </div>
           </div>
-          <div className='text-center order-1 md:order-2'>
+          <div className='text-center order-1 md:order-2 my-2'>
             <div className="text-[#C2E2FF] text-sm md:text-4xl font-aeonik-medium hidden"><span className="font-aeonik-bold text-white" >Le Futur</span> c'est <span className="font-aeonik-bold text-white">aujourd'hui</span></div>
             <div className="text-[#C2E2FF] text-4xl font-aeonik-medium hidden">Cliquez sur l'ecran pour le vivre</div>
-            <div className="text-[#C2E2FF] text-lg md:text-3xl font-aeonik-medium">Le <span className="text-white">Futur</span> à vous dans...</div>
+            <div className="text-[#C2E2FF] text-lg md:text-3xl lg:text-2xl font-aeonik-medium">Le <span className="text-white">Futur</span> à vous dans...</div>
             <div className="cd_timer my-4 flex items-center text-white">
               <div className="">
                 <div className="border-[1px] border-white px-2 py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl w-12 md:w-16 day">00</div>
@@ -136,9 +127,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='text-center order-3 md:my-6'>
-            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-3xl font-aeonik-medium">...Mais vous pouvez par contre le joindre au</div>
-            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-3xl font-aeonik-medium"><a className="font-aeonik-bold text-white" href='tel:+2250777404136'>+225 07 77 40 41 36</a> ou via <a className="font-aeonik-bold text-white" href='mailto:info@asernum.com'>info@asernum.com</a></div>
+          <div className='text-center order-3'>
+            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl font-aeonik-medium">...Mais vous pouvez le joindre au</div>
+            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl font-aeonik-medium"><a className="font-aeonik-bold text-white" href='tel:+2250777404136'>+225 07 77 40 41 36</a> ou via <a className="font-aeonik-bold text-white" href='mailto:info@asernum.com'>info@asernum.com</a></div>
             <div className="flex gap-2 mt-10 md:mt-4 justify-center">
               <a href='https://www.facebook.com/asernum' target='_blank' className="text-[#1B7AF5] bg-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center">
               <svg className="size-4" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
