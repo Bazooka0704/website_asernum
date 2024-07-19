@@ -69,9 +69,9 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex h-screen justify-center p-8 md:p-24">
-        <div className="relative flex flex-col items-center m-auto">
-          <div className="order-2 md:order-1 relative flex items-center bg-white justify-between mt-10 md:mt-24 mb-10 md:mb-16 shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
+      <main className="flex justify-center px-8 md:px-8 h-full max-h-full">
+        <div className="flex flex-col items-center m-auto">
+          <div className="order-2 md:order-1 relative flex my-8  items-center bg-white justify-between shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
             {/* <div className='absolute w-full z-10 flex justify-center'>
               <Image
                 className="hidden hidden-image w-[55px] md:w-[85px]" // Apply hidden class initially
@@ -97,7 +97,7 @@ export default function Home() {
                 />
               </div>
               <div className="relative w-7 md:w-8 h-[120px] md:h-52 bg-[#202042] rounded-r-md flex">
-                <div className="w-[18px] h-[100px] md:h-44 bg-white my-auto sticky inset-y-0 left-0"></div>
+                <div className="w-[18px] h-[100px] md:h-44 bg-white my-auto absolute inset-y-0 left-0"></div>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='text-center order-3 mt-10 md:mt-6'>
+          <div className='text-center order-3 md:my-6'>
             <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-3xl font-aeonik-medium">...Mais vous pouvez par contre le joindre au</div>
             <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-3xl font-aeonik-medium"><a className="font-aeonik-bold text-white" href='tel:+2250777404136'>+225 07 77 40 41 36</a> ou via <a className="font-aeonik-bold text-white" href='mailto:info@asernum.com'>info@asernum.com</a></div>
             <div className="flex gap-2 mt-10 md:mt-4 justify-center">

@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <head>
       <link rel='icon' href='/public/img/svg/logo.svg' />
       </head>
-      <body className="h-screen">{children}</body>
+      <body className="h-screen max-h-screen relative">{children}</body>
     </html>
   );
 }
