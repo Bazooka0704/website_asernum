@@ -49,9 +49,9 @@ export default function Home() {
 
     function updateBracketSize(daysRemaining) {
       const daysElapsed = totalDays - daysRemaining;
-      const bracketWidth = 24 + ((maxBracketWidth - 6) * (totalDays / totalDays));
-      const innerWidth = 12 + ((maxInnerWidth - 10) * (totalDays / totalDays));
-      const marginRight = (totalDays / totalDays) * maxMarginRight;
+      const bracketWidth = 24 + ((maxBracketWidth - 6) * (daysElapsed / totalDays));
+      const innerWidth = 12 + ((maxInnerWidth - 10) * (daysElapsed / totalDays));
+      const marginRight = (daysElapsed / totalDays) * maxMarginRight;
 
       bracket1.style.width = `${bracketWidth}px`;
       bracketInner.style.width = `${innerWidth}px`;
