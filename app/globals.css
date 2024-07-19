@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'aeonik-normal';
+  src: url('../public/fonts/aeonik/Aeonik-Air.otf');
+}
+
+@font-face {
+  font-family: 'aeonik-medium';
+  src: url('../public/fonts/aeonik/Aeonik-Medium.otf');
+}
+
+@font-face {
+  font-family: 'aeonik-bold';
+  src: url('../public/fonts/aeonik/Aeonik-Bold.otf');
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 75, 75, 250;
+  --background-middle-rgb: 0, 149, 242;
+  --background-end-rgb: 75, 75, 250;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-start-rgb: 75, 75, 250;
+    --background-middle-rgb: 0, 149, 242;
+    --background-end-rgb: 75, 75, 250;
+  }
+}
+
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-image: radial-gradient(
+      circle at center,
+      rgb(var(--background-middle-rgb)) ,
+      rgb(var(--background-end-rgb))
+    );
+}
+
+footer {
+  color: rgb(var(--foreground-rgb));
+  background-image: radial-gradient(
+    circle at center,
+    rgb(255 255 255 / 70%) 1%,
+    rgb(255 255 255 / 36%) 24%, 
+    rgb(255 255 255 / 12%) 41%, 
+    rgb(255 255 255 / 3%) 55%, 
+    #fff0 66%, 
+    #fff0 72%
+  );
+    
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.cd_timer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
