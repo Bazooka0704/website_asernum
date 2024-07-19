@@ -69,9 +69,9 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex flex-col justify-between px-6 md:px-8 h-full  max-h-full mt-16 lg:mt-16 xl:mt-32">
+      <main className="flex flex-col px-6 md:px-8 h-full  max-h-full">
         <div className="flex flex-col items-center mx-auto">
-          <div className="order-2 md:order-1 relative flex my-8 lg:my-0  items-center bg-white justify-between shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
+          <div className="order-2 md:order-1 relative flex my-2 md:my-8 lg:my-0  items-center bg-white justify-between shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
 
             <div className='space-container flex w-full space-x-0'>
               <div className="relative w-5 md:w-6 h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-l-md">
@@ -92,44 +92,44 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='text-center order-1 md:order-2 my-2'>
+          <div className='text-center order-1 md:order-2 my-2 2xl:my-8'>
             <div className="text-[#C2E2FF] text-sm md:text-4xl font-aeonik-medium hidden"><span className="font-aeonik-bold text-white" >Le Futur</span> c'est <span className="font-aeonik-bold text-white">aujourd'hui</span></div>
             <div className="text-[#C2E2FF] text-4xl font-aeonik-medium hidden">Cliquez sur l'ecran pour le vivre</div>
-            <div className="text-[#C2E2FF] text-lg md:text-3xl lg:text-2xl font-aeonik-medium">Le <span className="text-white">Futur</span> à vous dans...</div>
+            <div className="text-[#C2E2FF] text-lg md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium">Le <span className="text-white font-aeonik-bold">Futur</span> à vous dans...</div>
             <div className="cd_timer my-4 flex items-center text-white">
               <div className="">
-                <div className="border-[1px] border-white px-2 py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl w-12 md:w-16 day">00</div>
+                <div className="border-[1px] border-white py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl lg:text-xl 2xl:text-4xl w-12 md:w-16 lg:w-12 2xl:w-16 day">00</div>
                 <span className="text-[10px] md:text-sm font-aeonik-medium">Jours</span>
               </div>
               <div className=" pb-7">
-                <div className="font-aeonik-medium text-lg md:text-4xl">:</div>
+                <div className="font-aeonik-medium text-lg md:text-4xl lg:text-xl">:</div>
                 <span className="text-[10px] md:text-sm font-aeonik-medium"></span>
               </div>
               <div className="">
-                <div className="border-[1px] border-white px-2 py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl w-12 md:w-16 hour">00</div>
+                <div className="border-[1px] border-white py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl lg:text-xl 2xl:text-4xl w-12 md:w-16 lg:w-12 2xl:w-16 hour">00</div>
                 <span className="text-[10px] md:text-sm font-aeonik-medium">Heures</span>
               </div>
               <div className=" pb-7">
-                <div className="font-aeonik-medium text-lg md:text-4xl">:</div>
+                <div className="font-aeonik-medium text-lg md:text-4xl lg:text-xl">:</div>
                 <span className="text-[10px] md:text-sm font-aeonik-medium"></span>
               </div>
               <div className="">
-                <div className="border-[1px] border-white px-2 py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl w-12 md:w-16 minute">00</div>
+                <div className="border-[1px] border-white py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl lg:text-xl 2xl:text-4xl w-12 md:w-16 lg:w-12 2xl:w-16 minute">00</div>
                 <span className="text-[10px] md:text-sm font-aeonik-medium">Minutes</span>
               </div>
               <div className=" pb-7">
-                <div className="font-aeonik-medium text-lg md:text-4xl">:</div>
+                <div className="font-aeonik-medium text-lg md:text-4xl lg:text-xl">:</div>
                 <span className="text-[10px] md:text-sm font-aeonik-medium"></span>
               </div>
               <div className="">
-                <div className="border-[1px] border-white px-2 py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl w-12 md:w-16 second">00</div>
+                <div className="border-[1px] border-white py-6 mx-1 md:mx-2 font-aeonik-bold rounded-lg text-lg md:text-4xl lg:text-xl 2xl:text-4xl w-12 md:w-16 lg:w-12 2xl:w-16 second">00</div>
                 <span className="text-[10px] md:text-sm font-aeonik-medium">Secondes</span>
               </div>
             </div>
           </div>
           <div className='text-center order-3'>
-            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl font-aeonik-medium">...Mais vous pouvez le joindre au</div>
-            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl font-aeonik-medium"><a className="font-aeonik-bold text-white" href='tel:+2250777404136'>+225 07 77 40 41 36</a> ou via <a className="font-aeonik-bold text-white" href='mailto:info@asernum.com'>info@asernum.com</a></div>
+            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium">...Mais vous pouvez le joindre au</div>
+            <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium"><a className="font-aeonik-bold text-white" href='tel:+2250777404136'>+225 07 77 40 41 36</a> ou via <a className="font-aeonik-bold text-white" href='mailto:info@asernum.com'>info@asernum.com</a></div>
             <div className="flex gap-2 mt-10 md:mt-4 justify-center">
               <a href='https://www.facebook.com/asernum' target='_blank' className="text-[#1B7AF5] bg-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center">
               <svg className="size-4" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
