@@ -42,7 +42,7 @@ export default function Home() {
     }
 
     function updateSpacing(daysRemaining) {
-      const daysElapsed = totalDays - daysRemaining;
+      const daysElapsed = totalDays - 0;
       const spaceX = (daysElapsed / totalDays) * maxSpaceX;
       
       const spaceContainer = document.querySelector('.space-container');
@@ -74,12 +74,12 @@ export default function Home() {
           <div className="order-2 md:order-1 relative flex my-2 md:my-8 lg:my-0  items-center bg-white justify-between shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
 
             <div className='space-container flex w-full space-x-0'>
-              <div className="relative w-5 md:w-6 h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-l-md">
-                <div className="w-[10px] md:w-3 h-[100px] md:h-24 lg:h-24 xl:h-44 bg-white my-auto absolute inset-y-0 right-0"></div>
+              <div className="relative w-5 md:w-6 xl:w-7 h-20 md:h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-l-md">
+                <div className="w-[10px] md:w-3 h-16 md:h-24 lg:h-24 xl:h-44 bg-white my-auto absolute inset-y-0 right-0"></div>
               </div>
               <div className='bg-white h-full flex m-auto'>
                 <Image
-                  className="hidden hidden-image w-[40px] md:w-[85px]" // Apply hidden class initially
+                  className="hidden hidden-image w-[30px] md:w-[40px] lg:w-[45px] xl:w-[70px]" // Apply hidden class initially
                   src="/img/svg/letter.svg"
                   alt="Next.js Logo"
                   width={0}
@@ -87,8 +87,8 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative w-5 md:w-6 h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-r-md flex">
-                <div className="w-[10px] md:w-3 h-[100px] md:h-24 lg:h-24 xl:h-44 bg-white my-auto absolute inset-y-0 left-0"></div>
+              <div className="relative w-5 md:w-6 xl:w-7 h-20 m:h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-r-md flex">
+                <div className="w-[10px] md:w-3 h-16 md:h-24 lg:h-24 xl:h-44 bg-white my-auto absolute inset-y-0 left-0"></div>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
           <div className='text-center order-3'>
             <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium">...Mais vous pouvez le joindre au</div>
             <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium"><a className="font-aeonik-bold text-white" href='tel:+2250777404136'>+225 07 77 40 41 36</a> ou via <a className="font-aeonik-bold text-white" href='mailto:info@asernum.com'>info@asernum.com</a></div>
-            <div className="flex gap-2 mt-10 md:mt-4 justify-center">
+            <div className="flex gap-2 mt-4 md:mt-4 justify-center">
               <a href='https://www.facebook.com/asernum' target='_blank' className="text-[#1B7AF5] bg-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center">
               <svg className="size-4" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M4.63888 2.56076H5.75369V0.858375C5.58044 0.858375 5.39968 0.820729 5.21136 0.805664H4.20951C3.70483 0.805664 3.20767 0.956306 2.79337 1.24255C2.33388 1.58151 2.02504 2.09374 1.94218 2.65868C1.90452 2.88466 1.88195 3.11064 1.87442 3.33662V4.66991H0.254883V6.56058H1.86688V11.3137H3.87053V6.53798H5.48253L5.67838 4.66237H3.80277V3.3291C3.78017 2.9148 4.10408 2.56076 4.51838 2.5457C4.55604 2.5457 4.60121 2.5457 4.63888 2.5457" fill="#1B7AF5"/>
