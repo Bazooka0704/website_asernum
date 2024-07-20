@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 
+const now = "2024-07-19T00:00:00";
 const newYear = "2024-09-19T00:00:00";
 
 export default function Home() {
@@ -13,16 +14,31 @@ export default function Home() {
     const minuteEl = document.querySelector('.minute');
     const secondEl = document.querySelector('.second');
     const hiddenImage = document.querySelector('.hidden-image');
+    const countText1 = document.querySelector('#count-text-1');
+    const countText2 = document.querySelector('#count-text-2');
+    const todayText = document.querySelector('#today-text');
 
     const newYearDate = new Date(newYear);
-    const initialTotalSeconds = (newYearDate - new Date()) / 1000;
-    const totalDays = Math.floor(initialTotalSeconds / 3600 / 24);
+    const initialTotalSeconds = (newYearDate - new Date(now)) / 1000;
     const maxSpaceX = 40;
 
     function timeCountDown() {
       const nowDate = new Date();
       const newYearDate = new Date(newYear);
       const totalSeconds = (newYearDate - nowDate) / 1000;
+
+      if (totalSeconds <= 0) {
+        daysEl.innerHTML = '00';
+        hourEl.innerHTML = '00';
+        minuteEl.innerHTML = '00';
+        secondEl.innerHTML = '00';
+        
+        countText1.classList.add('hidden');
+        countText2.classList.add('hidden');
+        todayText.classList.remove('hidden');
+        updateSpacing(totalSeconds);
+        return;
+      }
 
       const days = Math.floor(totalSeconds / 3600 / 24);
       const hours = Math.floor(totalSeconds / 3600) % 24;
@@ -34,26 +50,21 @@ export default function Home() {
       minuteEl.innerHTML = formatTime(minutes);
       secondEl.innerHTML = formatTime(seconds);
 
-      updateSpacing(days);
+      updateSpacing(totalSeconds);
     }
 
     function formatTime(time) {
       return time >= 10 ? time : `0${time}`;
     }
 
-    function updateSpacing(daysRemaining) {
-      const daysElapsed = totalDays - 0;
-      const spaceX = (daysElapsed / totalDays) * maxSpaceX;
-      
+    function updateSpacing(secondsRemaining) {
+      const secondsElapsed = initialTotalSeconds - secondsRemaining;
+      const spaceX = (secondsElapsed / initialTotalSeconds) * maxSpaceX;
+      console.log(spaceX);
+
       const spaceContainer = document.querySelector('.space-container');
+      spaceContainer.style.gap = spaceX >= 40 ? 'none' : `${spaceX}px`;
 
-      if (spaceX === 40) {
-        spaceContainer.style.gap = `none`;
-      } else {
-        spaceContainer.style.gap = `${spaceX}px`;
-      }
-
-      // Show or hide the image based on spaceX value
       if (spaceX >= maxSpaceX) {
         hiddenImage.classList.remove('hidden');
       } else {
@@ -63,7 +74,6 @@ export default function Home() {
 
     timeCountDown();
     const interval = setInterval(timeCountDown, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -87,14 +97,16 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative w-5 md:w-6 xl:w-7 h-20 m:h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-r-md flex">
+              <div className="relative w-5 md:w-6 xl:w-7 h-20 md:h-[120px] lg:h-32 xl:h-52 bg-[#202042] rounded-r-md flex">
                 <div className="w-[10px] md:w-3 h-16 md:h-24 lg:h-24 xl:h-44 bg-white my-auto absolute inset-y-0 left-0"></div>
               </div>
             </div>
           </div>
-          <div className='text-center order-1 md:order-2 my-2 2xl:my-8'>
-            <div className="text-[#C2E2FF] text-sm md:text-4xl font-aeonik-medium hidden"><span className="font-aeonik-bold text-white" >Le Futur</span> c'est <span className="font-aeonik-bold text-white">aujourd'hui</span></div>
-            <div className="text-[#C2E2FF] text-4xl font-aeonik-medium hidden">Cliquez sur l'ecran pour le vivre</div>
+          <div id='today-text' className='hidden order-1 md:order-2 text-center mt-16'>
+              <div className="text-[#C2E2FF] text-lg md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium"><span className="font-aeonik-bold text-white" >Le Futur</span> c'est <span className="font-aeonik-bold text-white">aujourd'hui</span></div>
+              <div  className="text-[#C2E2FF] text-lg md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium">Cliquez sur l'ecran pour le vivre</div>
+            </div>
+          <div id='count-text-1' className='text-center order-1 md:order-2 my-2 2xl:my-8'>
             <div className="text-[#C2E2FF] text-lg md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium">Le <span className="text-white font-aeonik-bold">Futur</span> à vous dans...</div>
             <div className="cd_timer my-4 flex items-center text-white">
               <div className="">
@@ -127,22 +139,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='text-center order-3'>
+          <div id='count-text-2' className='text-center order-3'>
             <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium">...Mais vous pouvez le joindre au</div>
             <div className="text-[#C2E2FF] text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-aeonik-medium"><a className="font-aeonik-bold text-white" href='tel:+2250777404136'>+225 07 77 40 41 36</a> ou via <a className="font-aeonik-bold text-white" href='mailto:info@asernum.com'>info@asernum.com</a></div>
-            <div className="flex gap-2 mt-4 md:mt-4 justify-center">
-              <a href='https://www.facebook.com/asernum' target='_blank' className="text-[#1B7AF5] bg-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center">
-              <svg className="size-4" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.63888 2.56076H5.75369V0.858375C5.58044 0.858375 5.39968 0.820729 5.21136 0.805664H4.20951C3.70483 0.805664 3.20767 0.956306 2.79337 1.24255C2.33388 1.58151 2.02504 2.09374 1.94218 2.65868C1.90452 2.88466 1.88195 3.11064 1.87442 3.33662V4.66991H0.254883V6.56058H1.86688V11.3137H3.87053V6.53798H5.48253L5.67838 4.66237H3.80277V3.3291C3.78017 2.9148 4.10408 2.56076 4.51838 2.5457C4.55604 2.5457 4.60121 2.5457 4.63888 2.5457" fill="#1B7AF5"/>
-                </svg>
-              </a>
-              <a href='https://www.linkedin.com/company/asernum/' target='_blank' className="text-[#1B7AF5] bg-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center">
-                <svg className="size-4" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.719021 3.26332H2.63229V9.41747H0.719021V3.26332ZM1.68317 0.205078C2.29332 0.205078 2.79049 0.709749 2.78295 1.31989C2.78295 1.93003 2.27828 2.4272 1.66814 2.41967C1.058 2.41967 0.568359 1.92252 0.568359 1.31238C0.568359 0.702232 1.06554 0.205078 1.67568 0.205078" fill="#1B7AF5"/>
-                  <path d="M3.81491 3.27094H5.64534V4.10705C6.02197 3.46677 6.71499 3.0826 7.46072 3.11274C9.39661 3.11274 9.75817 4.38576 9.75817 6.04294V9.41754H7.89009V6.42709C7.89009 5.71149 7.89008 4.79252 6.89578 4.79252C5.90147 4.79252 5.74326 5.5759 5.74326 6.3367V9.38743H3.80737V3.2634L3.81491 3.27094Z" fill="#1B7AF5"/>
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
       </main>
