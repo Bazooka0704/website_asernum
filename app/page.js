@@ -79,7 +79,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex flex-col px-6 md:px-8 h-full  max-h-full">
+      <main className="flex flex-col px-6 md:px-8  items-center justify-center min-h-screen">
         <div className="flex flex-col items-center mx-auto">
           <div className="order-2 md:order-1 relative flex my-2 md:my-8 lg:my-0  items-center bg-white justify-between shadow-[1px_1px_100px_100px_#ffffff63] rounded-3xl">
 
